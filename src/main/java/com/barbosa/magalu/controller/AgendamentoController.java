@@ -23,4 +23,9 @@ public class AgendamentoController {
     public ResponseEntity<AgendamentoOutDTO>buscarAgendamentoPorId(@PathVariable Long id){
         return ResponseEntity.ok(agendamentoService.buscarAgendamentoPorId(id));
     }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<Void> cancelarAgendamento(@PathVariable Long id){
+        return ResponseEntity.ok(agendamentoService.cancelarAgendamento(id));
+    }
 }
