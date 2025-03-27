@@ -4,6 +4,7 @@ import com.barbosa.magalu.business.AgendamentoService;
 import com.barbosa.magalu.controller.dto.in.AgendamentoInDTO;
 import com.barbosa.magalu.controller.dto.out.AgendamentoOutDTO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +27,6 @@ public class AgendamentoController {
 
     @PatchMapping("/{id}")
     public ResponseEntity<Void> cancelarAgendamento(@PathVariable Long id){
-        return ResponseEntity.ok(agendamentoService.cancelarAgendamento(id));
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).body(agendamentoService.cancelarAgendamento(id));
     }
 }
